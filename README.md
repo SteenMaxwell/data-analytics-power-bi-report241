@@ -33,3 +33,21 @@ For this project, data was imported into Power BI from various sources using the
 
 
 ## Transformations on Data
+After importing the data, the following transformations were performed to prepare it for analysis:
+
+1) Removed and Split Columns
+   - Removed Columns to ensure data privacy and to remove useless columns.
+   - Split Date+Time columns into separate columns.
+
+2) Data Cleaning
+   - Removed rows with missing or null values.
+   - Renamed columns for clarity and consistency.
+   - Removed Duplicates to prevent duplicates in the data.
+   - Replaced misspelt values so all the values are consistent and correctly spelled.
+  
+3) Created new Columns
+   - Created a new column to combine two columns values.
+
+
+
+
