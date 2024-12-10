@@ -1,5 +1,11 @@
 # Data Analytics Power BI Report
 
+## table of Contents
+
+## Introduction
+This README will follow in a chronological order explaining the steps taken to achieve a Power BI comprehensive quarterly report for a medium sized international retailer. This will give the company insights into their data to elevate their business intelligence and various decision-making strategies.
+
+
 ## Created a Virtual Machine
 For this project I needed Windows to run Power BI Desktop. I created an Azure Virtual Machine (VM) so this was possible. 
 
@@ -49,5 +55,19 @@ After importing the data, the following transformations were performed to prepar
    - Created a new column to combine two columns values.
 
 
+## Creating a Date Table
+I wanted to utilise Power BI's time intelligence functions through out my report, and to acheive this I needed a Date Table. 
+   - Created a a date table (using CALENDER function) running from the start of the year containing the earliest date in the `Orders['Order Date']` column to the end of the year containing the latest date in the `Orders['Shipping Date']` column.
+   - This ensures all dates are accounted for in the newly created `Date Table`.
+   - DAX formulas were then used to create various columns in the `Date Table`. 
+   - For Example:
+      - ...
 
+## Building a Star Schema Model Build
+Relationships were built between the various tables. As I was going for a Star Schema Model Build, the four dimensional tables were directly connected to the main fact table `Orders`.
+   -  all relationships are one-to-many, with a single filter direction flowing from the dimension table side to the fact table side.
 
+## Creating Key Measures from the Data
+   - I first created a `Measures Table` to manage the measures I created and keep them organised.
+   - I created some key measures which I will use for my report:
+        - ...
