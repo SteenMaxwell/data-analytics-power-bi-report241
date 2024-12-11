@@ -43,7 +43,7 @@ For this project, data was imported into Power BI from various sources using the
 4) ZIP file (folder data connector)
    - Extracted and imported data from a ZIP file by using the folder data connector.
    - Steps:
-     - Extracted files locally and imported using Get Data > Folder.
+     - Extracted files locally and imported using **Get Data** > **Folder**.
      - Combined files within the folder using Power Query transformations.
 
 
