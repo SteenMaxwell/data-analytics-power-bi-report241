@@ -9,6 +9,7 @@
 6. [Building a Star Schema Model Build](#Building-a-Star-Schema-Model-Build)
 7. [Creating Key Measures from the Data](#Creating-Key-Measures-from-the-Data)
 8. [Date and Geographical Hierarchies](#Date-and-Geographical-Hierarchies)
+9. [Building the Customer Detail Page](Building-the-Customer-Detail-Page)
 
 
 ## Introduction
@@ -115,3 +116,27 @@ These hierarchies allow you to drill down into the data and perform granular ana
   - `World Region`
   - `Country`
   - `Country Region`
+
+## Building the Customer Detail Page
+This report page focuses on customer-level analysis.
+
+### Creating Card Visuals
+Two Card visuals were used to present the number of `Unique customers` and `Revenue per Customer`.
+
+### Creating donut and line charts
+
+
+### Top customers Table and Cards
+
+
+### Date Slicer
+
+
+
+
+
+
+
+
+
+
