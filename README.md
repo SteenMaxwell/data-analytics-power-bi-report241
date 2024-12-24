@@ -16,8 +16,15 @@
    - [Top customers Table and Cards](#Top-customers-Table-and-Cards)
    - [Date Slicer](#Date-Slicer)
 4. [Building the Executive Summary Page](#Building-the-Executive-Summary-Page)
+   - [Creating card visuals, Line Chart and Donut Charts](#Creating-card-visuals,-Line-Chart-and-Donut-Charts)
+   - [Creating Bar Charts and KPI visuals](#Creating-Bar-Charts-and-KPI-visuals)
 5. [Building the Product Detail Page](#Building-the-Product-Detail-Page)
+   - [Creating Gauge Visuals and Filter State Cards](#Creating-Gauge-Visuals-and-Filter-State-Cards)
+   - [Creating an Area Chart, Top Products Table and Scatter Graph](#Creating-an-Area-Chart,-Top-Products-Table-and-Scatter-Graph)
+   - [Creating a Slicer Toolbar](#Creating-a-Slicer-Toolbar)
 6. [Building the Stores Map Page](#Building-the-Stores-Map-Page)
+   - [Creating a Map Visual and Country Slicer](#Creating-a-Map-Visual-and-Country-Slicer)
+   - [Creating a Stores Drillthrough Page and a Stores Tooltip Page](#Creating-a-Stores-Drillthrough-Page-and-a-Stores-Tooltip-Page)
 7. [Cross-Filtering and Navigation Set-up](#Cross-Filtering-and-Navigation-Set-up)
 8. [Creating Metrics for Users Outside the company with SQL](#Creating-Metrics-for-Users-Outside-the-company-with-SQL)
 
@@ -181,13 +188,30 @@ The trend axis is on and the visuals are set so the values produce certain colou
 <img width="968" alt="Executive Report Full" src="https://github.com/user-attachments/assets/dabd07c6-228f-456a-a243-314815d35d4a" />
 
 ## Building the Product Detail Page
+The purpose of this page is provide an in-depth look at which products within the inventory are performing well, with the option to filter by product and region.
+
+### Creating Gauge Visuals and Filter State Cards
+
+
+### Creating an Area Chart, Top Products Table and Scatter Graph
+
+### Creating a Slicer Toolbar
+
 
 
 ## Building the Stores Map Page
+ The Stores Map page allows the regional managers to easily check on the stores under their control, allowing them to see which of the stores they are responsible for are most profitable, as well as which are on track to reach their quarterly profit and revenue
+
+### Creating a Map Visual and Country Slicer
+
+### Creating a Stores Drillthrough Page and a Stores Tooltip Page
+
 
 
 ## Cross-Filtering and Navigation Set-up
+I went through each page to make sure all corss-filtering was handled correctly and then finished the navigation bar so clicking an icon would take you to the correct page.
 
+The corss-filtering checks and changes made sure only certain visuals could affect the other visuals. This is useful when ...
 
 ## Creating Metrics for Users Outside the company with SQL
 
