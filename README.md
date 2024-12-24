@@ -141,6 +141,7 @@ A Line Chart visual was added to show `[Total Customers]` against the Date Hiera
 
 ### Top customers Table and Cards
 I created a table which was filtered to display the Top 20 Customers by revenue. I filtered the table using a Top N filter as shown:
+
 <img width="196" alt="Customer-filter-table" src="https://github.com/user-attachments/assets/a6ee5f30-2fc6-49b9-b4f6-4da1192ac412" />
 
 I added conditional formatting to the revenue column to display data bars for the revenue values.
@@ -154,7 +155,30 @@ A slicer was added to the Customer Detail Page so a certain date range (in years
 
 
 ## Building the Executive Summary Page
+The purpose of this page is to give an overview of the company's performance as a whole, so that C-suite executives can quickly get insights and check outcomes against key targets.
 
+### Creating card visuals, Line Chart and Donut Charts
+Three card visuals were created in the same way as the Customers Page but instead they show the measures `[Total Revenue]`, `[Total Orders]` and `[Total Profit]`. In the properties section, the data values were changed to a currency type to display the amount in £.
+
+Similarly, the line grpah was created in the same way as the Customers Page but the Y-axis was set to `[Total Revenue]`.
+
+Two donut charts were created showing `[Total Revenue]` broken down by `Store[Country]` and `Store[Store Type]`. These were also created in the same way as the donut charts created for the Customer Detail page.
+
+### Creating Bar Charts and KPI visuals 
+I created a Bar Chart to show the number of orders by product category. This was created by copying the `Total Customers by Product Category` donut chart from the Customer Detail page and changing the visual type to a clustered bar chart. The X-axis was changed to `[Total Orders]`.
+
+Three KPI visuals were created to display the `Quarterly Revenue`, `Quarterly Orders` and `Quarterly Profit`. New measures were created to achieve this:
+   Previous Quarter Measures to create Totals for previous quarter revenue, profit and orders. 
+   - ```DAX
+     Previous Quarter Revenue = CALCULATE([Total Revenue], PREVIOUSQUARTER('Date Table'[Date]))
+     ```
+   Target measures (equal to 5% growth in each measure compared to the previous quarter)
+   - ```DAX
+     Revenue Targets 5% = [Previous Quarter Revenue] * 1.05
+     ```
+The trend axis is on and the visuals are set so the values produce certain colours based on the previous quarter vs. the target values.
+
+<img width="968" alt="Executive Report Full" src="https://github.com/user-attachments/assets/dabd07c6-228f-456a-a243-314815d35d4a" />
 
 ## Building the Product Detail Page
 
