@@ -26,7 +26,8 @@
    - [Creating a Map Visual and Country Slicer](#Creating-a-Map-Visual-and-Country-Slicer)
    - [Creating a Stores Drillthrough Page and a Stores Tooltip Page](#Creating-a-Stores-Drillthrough-Page-and-a-Stores-Tooltip-Page)
 7. [Cross-Filtering and Navigation Set-up](#Cross-Filtering-and-Navigation-Set-up)
-8. [Creating Metrics for Users Outside the company with SQL](#Creating-Metrics-for-Users-Outside-the-company-with-SQL)
+8. [A completed Report Page with all Features](#A-completed-Report-Page-with-all-Features)
+9. [Creating Metrics for Users Outside the company with SQL](#Creating-Metrics-for-Users-Outside-the-company-with-SQL)
 
 
 ## Introduction
@@ -200,18 +201,35 @@ The purpose of this page is provide an in-depth look at which products within th
 
 
 ## Building the Stores Map Page
- The Stores Map page allows the regional managers to easily check on the stores under their control, allowing them to see which of the stores they are responsible for are most profitable, as well as which are on track to reach their quarterly profit and revenue
+ The Stores Map page allows the regional managers to easily check on the stores under their control, allowing them to see which of the stores they are responsible for are most profitable, as well as which are on track to reach their quarterly profit and revenue.
 
 ### Creating a Map Visual and Country Slicer
+I created a Map Visual and assigned the previously created `Geography hierarchy` to the **Location** field, and `[ProfitYTD]` measure to the **Bubble size** field.
+I added a slicer to the page and set it to ` Stores[Country]` so you could use the slicer to filter between countries. The slicer is formatted so there is a select all option and multiple countires can be selected at once in a Tile slicer style.
+
+<img width="966" alt="Store Map Region" src="https://github.com/user-attachments/assets/f49f2109-2aa0-47bf-aef8-d8b07253dd4d" />
 
 ### Creating a Stores Drillthrough Page and a Stores Tooltip Page
-
+To make it easy for the regional managers to check on the progress of a given store, I created a drillthrough page that summarises each store's performance. This page contains:
+- A table showing the top 5 products based on Total Orders
+- A column chart showing Total Orders by product category for the store
+- Gauges for Profit YTD against a profit target of 20% year-on-year growth vs. the same period in the previous year
+- A Card visual showing the currently selected store
 
 
 ## Cross-Filtering and Navigation Set-up
-I went through each page to make sure all corss-filtering was handled correctly and then finished the navigation bar so clicking an icon would take you to the correct page.
+I went through each page to make sure all corss-filterings were handled correctly and then finished the navigation bar so clicking an icon would take you to the correct page.
 
-The corss-filtering checks and changes made sure only certain visuals could affect the other visuals. This is useful when ...
+The corss-filtering checks and changes made sure only certain visuals could affect the other visuals. This is useful to prevent the page becoming too confusing and keeping key insights available to view at all times.
+
+For each page, there was a custom icon and for each icon there are two colour variants. The white version was used for the default button appearance, and the cyan one was used so that the button changes colour when hovered over with the mouse pointer. In the sidebar of the Executive Summary page, I added four new blank buttons, and in the **Format > Button Style pane**, the **Apply settings to field** is set to **Default**, and each button icon was set to the relevant white png in the Icon tab. 
+
+For each button, **Format > Button Style > Apply settings** was set to **On Hover**, and then selected the alternative colourway of the relevant button under the Icon tab. For each button, the Action format option was turned on, and selected as Page navigation type. The correct page was set under Destination, and the buttons were grouped together, and copied across to the other pages.
+
+<img width="139" alt="Showing navigation bar" src="https://github.com/user-attachments/assets/60f35426-a323-465f-8f49-e8f15d5d189f" />
+
+## A completed Report Page with all Features
+<img width="831" alt="Complete Project" src="https://github.com/user-attachments/assets/199869a3-1c7c-4c79-a355-0954175ffe70" />
 
 ## Creating Metrics for Users Outside the company with SQL
 
