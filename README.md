@@ -216,6 +216,16 @@ To make it easy for the regional managers to check on the progress of a given st
 - Gauges for Profit YTD against a profit target of 20% year-on-year growth vs. the same period in the previous year
 - A Card visual showing the currently selected store
 
+I created a new page and set the Page type to **Drillthrough** and set Drill through when to **Used as category**. I also set Drill through from to **country region**. For the gauges, I used the previous `[ProfitYTD]` and `[RevenueYTD]` measures. The goals for these gauges were a 20% increase on the previous year's year-to-date profit or revenue at the current point in the year:
+   - ```DAX
+
+     ```
+
+<img width="965" alt="Store Drillthrough page" src="https://github.com/user-attachments/assets/40349b51-7a57-4a45-bb7f-115500e41bc8" />
+
+I created a tooltip so users are able to see each store's year-to-date profit performance against the profit target just by hovering the mouse over a store on the map. For this I created a new tooltip page and copied the profit gauge visual, I then navigated to the Store Maps visual and set the tooltip of this visual to the tooltip page I created.
+
+<img width="790" alt="Store Map showing tooltip" src="https://github.com/user-attachments/assets/4cca6469-c04f-420f-bd5b-c8283db7bb76" />
 
 ## Cross-Filtering and Navigation Set-up
 I went through each page to make sure all corss-filterings were handled correctly and then finished the navigation bar so clicking an icon would take you to the correct page.
