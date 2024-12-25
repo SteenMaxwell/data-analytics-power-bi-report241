@@ -29,6 +29,7 @@
 8. [A completed Report Page with all Features](#A-completed-Report-Page-with-all-Features)
 9. [Creating Metrics for Users Outside the company with SQL](#Creating-Metrics-for-Users-Outside-the-company-with-SQL)
 
+NOTE: All pictures are screenshots and so are not interactive in the README, download the relevant file for an interactive experience.
 
 ## Introduction
 This README will follow in a chronological order explaining the steps taken to achieve a Power BI comprehensive quarterly report for a medium sized international retailer. This will give the company insights into their data to elevate their business intelligence and various decision-making strategies.
@@ -90,9 +91,11 @@ I wanted to utilise Power BI's time intelligence functions throughout my report,
    - This ensures all dates are accounted for in the newly created `Date Table`.
    - DAX formulas were then used to create various columns in the `Date Table`. 
    - For Example:
+      - For the Start of the Year Column:
       - ```DAX
         Start of Year = STARTOFYEAR('Date Table'[Date])
         ```
+      - For the Start of the Week Column:
       - ```DAX
         Start of Week = 'Date Table'[Date] - WEEKDAY('Date Table'[Date],2) + 1
         ```
@@ -108,15 +111,19 @@ Relationships were built between the various tables. As I was going for a Star S
 ### Creating Key Measures from the Data
    - I first created a `Measures Table` to manage the measures I created and keep them organised.
    - I created key measures which I will use for my report. I used DAX formulas to create these:
+        - A measure for the Total Revenue the company has produced:
         - ```DAX
           Total Revenue = SUMX(Orders, Orders[Product Quantity] * RELATED(Products[Sale Price]))
           ```
+        - A measure for the Total Profit the company has produced:
         - ```DAX
           Total Profit = SUMX(Orders, (RELATED('Products'[Sale Price]) - RELATED('Products'[Cost Price])) * Orders[Product Quantity])
           ```
+        - A measure for the Revenue the company has produced Year to Date:
         - ```DAX
           Revenue YTD = TOTALYTD([Total Revenue], 'Date Table'[Date])
           ```
+        - A measure for the Profit the company has produced Year to Date:
         - ```DAX
           Profit YTD = CALCULATE([Total Profit], DATESYTD('Date Table'[Date]))
           ```
@@ -192,7 +199,7 @@ The trend axis is on and the visuals are set so the values produce certain colou
 The purpose of this page is provide an in-depth look at which products within the inventory are performing well, with the option to filter by product and region.
 
 ### Creating Gauge Visuals and Filter State Cards
-
+I created three gauge visuals 
 
 ### Creating an Area Chart, Top Products Table and Scatter Graph
 
