@@ -249,10 +249,17 @@ For each button, **Format > Button Style > Apply settings** was set to **On Hove
 <img width="831" alt="Complete Project" src="https://github.com/user-attachments/assets/199869a3-1c7c-4c79-a355-0954175ffe70" />
 
 ## Creating Metrics for Users Outside the company with SQL
+I first connected to a Postgres database server hosted on Microsoft Azure so I could run the SQL queries on VSCode. I connected using the relevant HOST, PORT, DATABASE, USER and PASSWORD details. Once connected, I needed to get familiar with the data, tables and columns. To do this I printed a list of the tables in the database and then printed a list of the columns for each table.
 
+Following this, I created 5 SQL queries to find information about the data. These queries were to answer the following questions:
+1. How many staff are there in all of the UK stores?
+2. Which month in 2022 has had the highest revenue?
+3. Which German store type had the highest revenue for 2022?
+4. Create a view where the rows are the store types and the columns are the total sales, percentage of total sales and the count of orders.
+5. Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
 
+The following SQL queries are included in the files as `Question_1.sql` etc, where each number correlates to thw question above. The outputs of these queries were saved to CSV files with a correlating name, e.g `Question_1_result.csv`.
 
+<img width="664" alt="Q5 SQL query" src="https://github.com/user-attachments/assets/f1bc96c4-53cd-45e9-99de-1b65e6baef59" />
 
-
-
-
+<img width="326" alt="Q5 query result" src="https://github.com/user-attachments/assets/3f61e338-a5d3-4018-8276-30a29f1e710d" />
