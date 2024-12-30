@@ -225,11 +225,12 @@ To make it easy for the regional managers to check on the progress of a given st
 
 I created a new page and set the Page type to **Drillthrough** and set Drill through when to **Used as category**. I also set Drill through from to **country region**. For the gauges, I used the previous `[ProfitYTD]` and `[RevenueYTD]` measures. The goals for these gauges were a 20% increase on the previous year's year-to-date profit or revenue at the current point in the year:
    
-   Previous Year Profit DAX Formula:
+   - Previous Year Profit DAX Formula:
    - ```DAX
      Previous Year Profit YTD = CALCULATE([Profit YTD], SAMEPERIODLASTYEAR('Date Table'[Date]))
      ```
-     Profit Goal DAX Formula:
+
+   - Profit Goal DAX Formula:
    - ```DAX
      Profit Goal 20% = [Previous Year Profit YTD] * 1.20
      ```
