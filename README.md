@@ -196,7 +196,7 @@ The trend axis is on and the visuals are set so the values produce certain colou
 <img width="968" alt="Executive Report Full" src="https://github.com/user-attachments/assets/dabd07c6-228f-456a-a243-314815d35d4a" />
 
 ## Building the Product Detail Page
-The purpose of this page is provide an in-depth look at which products within the inventory are performing well, with the option to filter by product and region.
+The purpose of this page is to provide an in-depth look at which products within the inventory are performing well, with the option to filter by product and region.
 
 ### Creating Gauge Visuals and Filter State Cards
 I created three gauge visuals 
@@ -224,8 +224,13 @@ To make it easy for the regional managers to check on the progress of a given st
 - A Card visual showing the currently selected store
 
 I created a new page and set the Page type to **Drillthrough** and set Drill through when to **Used as category**. I also set Drill through from to **country region**. For the gauges, I used the previous `[ProfitYTD]` and `[RevenueYTD]` measures. The goals for these gauges were a 20% increase on the previous year's year-to-date profit or revenue at the current point in the year:
+   Previous Year Profit DAX Formula
    - ```DAX
-
+     Previous Year Profit YTD = CALCULATE([Profit YTD], SAMEPERIODLASTYEAR('Date Table'[Date]))
+     ```
+     Profit Goal DAX Formula
+   - ```DAX
+     Profit Goal 20% = [Previous Year Profit YTD] * 1.20
      ```
 
 <img width="965" alt="Store Drillthrough page" src="https://github.com/user-attachments/assets/40349b51-7a57-4a45-bb7f-115500e41bc8" />
