@@ -242,10 +242,11 @@ With all these visuals the product page is complete and looks like this when no 
 <img width="966" alt="Product Report Full - Empty" src="https://github.com/user-attachments/assets/d7b0bef1-be34-46fe-8229-87b7afe78f13" />
 
 ### Creating a Slicer Toolbar
-...
+I added a blank button to the top of the navigation bar, set the icon type to Custom in the Format pane, and chose the relevant filter icon as the icon image. I used Power BI's bookmarks feature to create a pop-out toolbar where the slicers will be placed. One slicer was set to `Products[Category]`, another set to `Stores[Country]` and the last set to `[Year] & [Quarter]`. All these were set to list slicers so users can easily filter the data on the Product Detail page. ...
 
 
 The Slicer bar:
+
 <img width="145" alt="Filter toolbar Products" src="https://github.com/user-attachments/assets/e2e699e3-3537-42d6-b54d-fa621b92e5d6" />
 
 Here are four examples of the Product Detail Page with different slicers applied, two showing the slicer bar open and two showing it closed:
