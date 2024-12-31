@@ -199,12 +199,60 @@ The trend axis is on and the visuals are set so the values produce certain colou
 The purpose of this page is to provide an in-depth look at which products within the inventory are performing well, with the option to filter by product and region.
 
 ### Creating Gauge Visuals and Filter State Cards
-I created three gauge visuals 
+I created three gauge visuals to show the current-quarter performance of Orders, Revenue and Profit against a quarterly target. The company is targeting 10% quarter-on-quarter growth in all three metrics. To acheive this I created the following measures:
+
+- The current quarter for the three metrics (for Revenue shown here):
+- ```DAX
+  Current Quarter Revenue = CALCULATE([Total Revenue], DATESQTD('Date Table'[Date]))
+  ```
+- The targets for the three metrics (for Revenue shown here):
+- ```DAX
+  Revenue Target 10% = IF(ISBLANK([Previous Quarter Revenue]), [Current Quarter Revenue] * 1.10, [Previous Quarter Revenue] * 1.10)
+  ```
+- The gaps for the three metrics (for Revenue shown here):
+- ```DAX
+  Revenue Gap = [Current Quarter Revenue] - [Revenue Target 10%]
+  ```
+
+The Gap measures were used in conditional formatting. This was used to show if the target is not yet met, the callout value will be red and if it is met, the value will be black.
+
+I created two filter state cards to reflect the filter state of the slicers. For these, two new measures were created to represent `Category Selection` and `Country Selection`:
+
+- Measure for Country Selection filter card:
+- ```DAX
+  Country Selection = IF(ISFILTERED(Stores[Country]), SELECTEDVALUE(Stores[Country],"No Selection"))
+  ```
+- Measure for Category Selection filter card:
+- ```DAX
+  Category Selection = IF(ISFILTERED(Products[Category]), SELECTEDVALUE(Products[Category], "No Selection"), "No Selection")
+  ```
 
 ### Creating an Area Chart, Top Products Table and Scatter Graph
+I created an area chart that shows how the different product categories are performing in terms of revenue over time.
+
+I also created a Top 10 products table with the following fields: `Product Description`, `Total Revenue`, `Total Customers`, `Total Orders`, `Profit per Order`. I filtered the table using a Top N filter, in the same way I did previously with the Top 20 Customers table.
+
+I created a scatter graph so the company can quickly see which product ranges are both top-selling items and also profitable. This will allow the products team to know which items to suggest to the marketing team for a promotional campaign. For this I needed to create a new calculated column for the `[Profit per Item]` in the Products table:
+- Calculated column DAX formula for Profit per item:
+- ```DAX
+  Profit per Item = Products[Sale Price] - Products[Cost Price]
+  ```
+
+With all these visuals the product page is complete and looks like this when no filters are selected:
+<img width="966" alt="Product Report Full - Empty" src="https://github.com/user-attachments/assets/d7b0bef1-be34-46fe-8229-87b7afe78f13" />
 
 ### Creating a Slicer Toolbar
+...
 
+
+The Slicer bar:
+<img width="145" alt="Filter toolbar Products" src="https://github.com/user-attachments/assets/e2e699e3-3537-42d6-b54d-fa621b92e5d6" />
+
+Here are four examples of the Product Detail Page with different slicers applied, two showing the slicer bar open and two showing it closed:
+<img width="969" alt="Product UK + example" src="https://github.com/user-attachments/assets/0e8c44aa-cb5a-4728-9bab-0978313572ed" />
+<img width="968" alt="Product Example w Slicer bar" src="https://github.com/user-attachments/assets/fd6627c4-398c-4356-8333-f99a2fc45906" />
+<img width="967" alt="Product Example w Germany" src="https://github.com/user-attachments/assets/15af5970-cacd-491f-b7f9-1fac2c2e63f6" />
+<img width="966" alt="Product Example no date selected" src="https://github.com/user-attachments/assets/9f6b5a05-2ebd-4387-97b3-cca565f1fe4d" />
 
 
 ## Building the Stores Map Page
