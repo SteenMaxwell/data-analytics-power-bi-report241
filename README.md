@@ -318,7 +318,9 @@ Following this, I created 5 SQL queries to find information about the data. Thes
 4. Create a view where the rows are the store types and the columns are the total sales, percentage of total sales and the count of orders.
 5. Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
 
-The following SQL queries are included in the files as `Question_1.sql` etc, where each number correlates to thw question above. The outputs of these queries were saved to CSV files with a correlating name, e.g `Question_1_result.csv`.
+The following SQL queries are included in the files as `Question_1.sql` etc, where each number correlates to the question above. The outputs of these queries were saved to CSV files with a correlating name, e.g `Question_1_result.csv`.
+
+Question 5 SQL query with the CSV file output:
 
 <img width="664" alt="Q5 SQL query" src="https://github.com/user-attachments/assets/f1bc96c4-53cd-45e9-99de-1b65e6baef59" />
 
