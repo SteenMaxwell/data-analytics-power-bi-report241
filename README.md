@@ -87,7 +87,7 @@ After importing the data, the following transformations were performed to prepar
 
 ### Creating a Date Table
 I wanted to utilise Power BI's time intelligence functions throughout my report, and to acheive this I needed a Date Table. 
-   - Created a a date table (using CALENDER function) running from the start of the year containing the earliest date in the `Orders['Order Date']` column to the end of the year containing the latest date in the `Orders['Shipping Date']` column.
+   - Created a date table (using CALENDER function) running from the start of the year containing the earliest date in the `Orders['Order Date']` column to the end of the year containing the latest date in the `Orders['Shipping Date']` column.
    - This ensures all dates are accounted for in the newly created `Date Table`.
    - DAX formulas were then used to create various columns in the `Date Table`. 
    - For Example:
@@ -242,7 +242,7 @@ With all these visuals the product page is complete and looks like this when no 
 <img width="966" alt="Product Report Full - Empty" src="https://github.com/user-attachments/assets/d7b0bef1-be34-46fe-8229-87b7afe78f13" />
 
 ### Creating a Slicer Toolbar
-I added a blank button to the top of the navigation bar, set the icon type to Custom in the Format pane, and chose the relevant filter icon as the icon image. I used Power BI's bookmarks feature to create a pop-out toolbar where the slicers will be placed. One slicer was set to `Products[Category]`, another set to `Stores[Country]` and the last set to `[Year] & [Quarter]`. All these were set to list slicers so users can easily filter the data on the Product Detail page. ... 
+I added a blank button to the top of the navigation bar, set the icon type to Custom in the Format pane, and chose the relevant filter icon as the icon image. I used Power BI's bookmarks feature to create a pop-out toolbar where the slicers will be placed. One slicer was set to `Products[Category]`, another set to `Stores[Country]` and the last set to `[Year] & [Quarter]`. All these were set to list slicers so users can easily filter the data on the Product Detail page. I also added a back button so the slicer toolbar could be hidden when not in use. I added two new bookmarks: one with the toolbar group hidden in the Selection pane, and one with it visible. I assigned the buttons to the relevant bookmarks. This allowed the slicer toolbar to open and close depending on the button clicked.
 
 
 The Slicer bar:
